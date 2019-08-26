@@ -1,8 +1,8 @@
-# Project Lombok extension
+# Symbok - Lombok extension
 
 ## Gradle
     dependencies {
-        compileOnly("net.sympower:lombok-extension:1.18.8-v1-SNAPSHOT")
+        compileOnly("net.sympower:symbok:1.18.8-v1-SNAPSHOT")
         compileOnly("org.projectlombok:lombok:1.18.8")
         annotationProcessor("org.projectlombok:lombok:1.18.8")
     }
@@ -85,4 +85,4 @@
 
 ## Configuration (lombok.config)
 Default lock field name for `@ReadLock` and `@WriteLock`
-`lombokExtension.readWriteLock.defaultFieldName=<fieldName>`
+`symbok.readWriteLock.defaultFieldName=<fieldName>`

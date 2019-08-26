@@ -9,7 +9,7 @@ public class ConfigurationKeys implements ConfigurationKeysLoader {
 
   public static final ConfigurationKey<String> READ_WRITE_LOCK_DEFAULT_FIELD_NAME =
       new ConfigurationKey<String>(
-          "lombokExtension.readWriteLock.defaultFieldName",
+          "symbok.readWriteLock.defaultFieldName",
           "Default lock field name for @ReadLock and @WriteLock"
       ) {};
 }
