@@ -84,5 +84,5 @@
     }
 
 ## Configuration (lombok.config)
-Default lock field name for `@ReadLock` and `@WriteLock`
+Default lock field name for `@ReadLock` and `@WriteLock`:
 `symbok.readWriteLock.defaultFieldName=<fieldName>`
