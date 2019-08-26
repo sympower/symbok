@@ -41,8 +41,8 @@
     public class LockTest {
       
       private final java.util.concurrent.locks.ReentrantReadWriteLock $readWriteLock = new ReentrantReadWriteLock();
-      private final ReentrantReadWriteLock generatedLock = new ReentrantReadWriteLock();  
-      private final ReentrantReadWriteLock existingLock = new ReentrantReadWriteLock();  
+      private final java.util.concurrent.locks.ReentrantReadWriteLock generatedLock = new ReentrantReadWriteLock();  
+      private final java.util.concurrent.locks.ReentrantReadWriteLock existingLock = new ReentrantReadWriteLock();  
       private int value;
         
       public void setValue(int value) {
