@@ -1,0 +1,25 @@
+**/target/
+**/build/
+**/out/
+**/bin
+**/out/
+**/*.pyc
+**/.classpath
+**/.project
+**/.settings/
+**/.gradle/
+**/*.iml
+
+### IntelliJ IDEA ###
+
+**/.idea/*
+!.idea/codeStyles/
+.idea/codeStyles/*
+!.idea/codeStyles/codeStyleConfig.xml
+!.idea/codeStyles/Project.xml
+!.idea/inspectionProfiles/
+.idea/inspectionProfiles/*
+!.idea/inspectionProfiles/profiles_settings.xml
+!.idea/inspectionProfiles/sympower_inspections.xml
+
+### END ###
