@@ -1,6 +1,7 @@
 buildscript {
   repositories {
     mavenLocal()
+    maven { url 'https://projectlombok.org/edge-releases' }
     maven {
       url uri(project.properties.sympowerMavenRepoPublicUrl)
       credentials {
@@ -23,6 +24,7 @@ sourceCompatibility = 1.8
 repositories {
   mavenLocal()
   mavenCentral()
+  maven { url 'https://projectlombok.org/edge-releases' }
   jcenter()
 }
 
@@ -74,12 +76,11 @@ tasks.compileJava {
 }
 
 dependencies {
-  compile files("${System.properties['java.home']}/../lib/tools.jar")
-  compile "org.kohsuke.metainf-services:metainf-services:1.8"
-  compile "org.eclipse.jdt:org.eclipse.jdt.core:3.10.0"
-  compile 'javax.inject:javax.inject:1'
-  lombok 'org.projectlombok:lombok:1.18.8'
-
+  compileOnly files("${System.properties['java.home']}/../lib/tools.jar")
+  compileOnly "org.kohsuke.metainf-services:metainf-services:1.8"
+  compileOnly "org.eclipse.jdt:org.eclipse.jdt.core:3.10.0"
+  compileOnly 'javax.inject:javax.inject:1'
+  lombok 'org.projectlombok:lombok:edge-SNAPSHOT'
   compileOnly files(unpackedAndRenamedLombokDir)
 
   testCompile group: 'junit', name: 'junit', version: '4.12'

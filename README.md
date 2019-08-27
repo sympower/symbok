@@ -3,8 +3,10 @@
 ## Gradle
     dependencies {
         compileOnly("net.sympower:symbok:1.18.8-v1-SNAPSHOT")
-        compileOnly("org.projectlombok:lombok:1.18.8")
-        annotationProcessor("org.projectlombok:lombok:1.18.8")
+        annotationProcessor("net.sympower:symbok:1.18.8-v1-SNAPSHOT")
+        
+        compileOnly("org.projectlombok:lombok:edge-SNAPSHOT")
+        annotationProcessor("org.projectlombok:lombok:edge-SNAPSHOT")
     }
 
 ## Usage
