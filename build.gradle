@@ -2,13 +2,7 @@ buildscript {
   repositories {
     mavenLocal()
     maven { url 'https://projectlombok.org/edge-releases' }
-    maven {
-      url uri(project.properties.sympowerMavenRepoPublicUrl)
-      credentials {
-        username "$sympowerMavenRepoUsername"
-        password "$sympowerMavenRepoPassword"
-      }
-    }
+    mavenCentral()
   }
 }
 
@@ -25,7 +19,6 @@ repositories {
   mavenLocal()
   mavenCentral()
   maven { url 'https://projectlombok.org/edge-releases' }
-  jcenter()
 }
 
 apply plugin: 'java'
