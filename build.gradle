@@ -90,14 +90,13 @@ test {
 }
 
 dependencies {
-
   compileOnly files("${System.properties['java.home']}/../lib/tools.jar")
   compileOnly 'org.kohsuke.metainf-services:metainf-services:1.8'
   compileOnly "org.eclipse.jdt:org.eclipse.jdt.core:3.10.0"
   compileOnly 'javax.inject:javax.inject:1'
   lombok 'org.projectlombok:lombok:edge-SNAPSHOT'
   compile files(unpackedAndRenamedLombokDir)
-  
+
   testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.1'
   testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.5.1'
   testCompile 'com.google.testing.compile:compile-testing:0.18'
