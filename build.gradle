@@ -25,15 +25,6 @@ apply plugin: 'java'
 apply plugin: 'maven-publish'
 
 publishing {
-  repositories {
-    maven {
-      credentials {
-        username "$sympowerMavenRepoUsername"
-        password "$sympowerMavenRepoPassword"
-      }
-      url = version.endsWith('SNAPSHOT') ? "${sympowerMavenRepoSnapshotsUrl}" : "${sympowerMavenRepoReleasesUrl}"
-    }
-  }
   publications {
     mavenJava(MavenPublication) {
       from components.java
