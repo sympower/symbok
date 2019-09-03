@@ -1,6 +1,6 @@
 package test;
 
-import net.sympower.lombok.ReadLock;
+import net.sympower.symbok.ReadLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 public class ReuseExistingLock {

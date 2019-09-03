@@ -1,6 +1,6 @@
-package net.sympower.lombok.javac.handler.conf;
+package net.sympower.symbok.javac.handler.conf;
 
-import net.sympower.lombok.SymbokTest;
+import net.sympower.symbok.SymbokTest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

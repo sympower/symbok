@@ -1,8 +1,7 @@
 package test;
 
-import net.sympower.lombok.ReadLock;
-import net.sympower.lombok.WriteLock;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
+import net.sympower.symbok.ReadLock;
+import net.sympower.symbok.WriteLock;
 
 public class DefaultLock {
 

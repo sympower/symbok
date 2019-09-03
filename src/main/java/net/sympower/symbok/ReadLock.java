@@ -1,4 +1,4 @@
-package net.sympower.lombok;
+package net.sympower.symbok;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;

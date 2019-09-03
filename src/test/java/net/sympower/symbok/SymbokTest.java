@@ -1,4 +1,4 @@
-package net.sympower.lombok;
+package net.sympower.symbok;
 
 import com.google.testing.compile.Compiler;
 import com.google.testing.compile.Compilation;
