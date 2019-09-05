@@ -28,16 +28,16 @@ public abstract class SymbokTest {
   private final Logger log = LoggerFactory.getLogger(getClass());
 
   protected void testClass(String path, String className) throws IOException {
-    String javacBytes = javacCompile(path, className);
-    String lombokBytes = lombokCompile(path, className);
-    assertThat(javacBytes).isEqualTo(lombokBytes);
+    String givenBytes = compileGiven(path, className);
+    String expectedBytes = compileExpected(path, className);
+    assertThat(givenBytes).isEqualTo(expectedBytes);
   }
 
-  protected String javacCompile(String path, String className) throws IOException {
+  protected String compileExpected(String path, String className) throws IOException {
     return compile(path, "expected", className, javac());
   }
 
-  protected String lombokCompile(String path, String className) throws IOException {
+  protected String compileGiven(String path, String className) throws IOException {
     return compile(path, "given", className, javac().withProcessors(new LombokProcessor()));
   }
 
@@ -62,7 +62,7 @@ public abstract class SymbokTest {
       Files.createDirectories(outputPath);
 
       Path outputFile = Paths.get(buildDir, TEST_DATA_OUTPUT_PATH, path, prefix, className + ".class");
-      log.info("Writing file: {}", outputFile);
+      log.info("Writing {} {} class file: {}", prefix, className, outputFile);
       IOUtils.write(bytes, new FileOutputStream(outputFile.toFile()));
       return disassemble(bytes);
     }
@@ -71,8 +71,8 @@ public abstract class SymbokTest {
     }
   }
 
-  protected static String disassemble(byte[] javacBytes) throws IOException {
-    ClassReader cr = new ClassReader(new ByteArrayInputStream(javacBytes));
+  protected static String disassemble(byte[] classBytes) throws IOException {
+    ClassReader cr = new ClassReader(new ByteArrayInputStream(classBytes));
     try (StringWriter out = new StringWriter()) {
       try (PrintWriter printWriter = new PrintWriter(out)) {
         cr.accept(new TraceClassVisitor(printWriter), 0);
