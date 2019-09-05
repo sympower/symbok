@@ -28,9 +28,9 @@ public abstract class SymbokTest {
   private final Logger log = LoggerFactory.getLogger(getClass());
 
   protected void testClass(String path, String className) throws IOException {
-    String givenBytes = compileGiven(path, className);
-    String expectedBytes = compileExpected(path, className);
-    assertThat(givenBytes).isEqualTo(expectedBytes);
+    String actualBytecodeInstructions = compileGiven(path, className);
+    String expectedBytecodeInstructions = compileExpected(path, className);
+    assertThat(actualBytecodeInstructions).isEqualTo(expectedBytecodeInstructions);
   }
 
   protected String compileExpected(String path, String className) throws IOException {
