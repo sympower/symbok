@@ -33,15 +33,15 @@ public abstract class SymbokTest {
     assertThat(actualBytecodeInstructions).isEqualTo(expectedBytecodeInstructions);
   }
 
-  protected String compileExpected(String path, String className) throws IOException {
+  private String compileExpected(String path, String className) throws IOException {
     return compile(path, "expected", className, javac());
   }
 
-  protected String compileGiven(String path, String className) throws IOException {
+  private String compileGiven(String path, String className) throws IOException {
     return compile(path, "given", className, javac().withProcessors(new LombokProcessor()));
   }
 
-  protected String compile(String path, String prefix, String className, Compiler compiler) throws IOException {
+  private String compile(String path, String prefix, String className, Compiler compiler) throws IOException {
     // Use '-g:none' to omit line numbers because lombok generates new code without source line numbers
     // and it messes up diff checker
     Compilation compilation = compiler
@@ -71,7 +71,7 @@ public abstract class SymbokTest {
     }
   }
 
-  protected static String disassemble(byte[] classBytes) throws IOException {
+  private String disassemble(byte[] classBytes) throws IOException {
     ClassReader cr = new ClassReader(new ByteArrayInputStream(classBytes));
     try (StringWriter out = new StringWriter()) {
       try (PrintWriter printWriter = new PrintWriter(out)) {
