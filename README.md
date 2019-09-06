@@ -1,6 +1,8 @@
 # Symbok - Lombok extension
 
 ## Gradle
+Please note that currently the project needs to be built against Lombok's `edge-SNAPSHOT` because there is a bug in the latest Lombok version (`1.18.8`) that prevents loading extensions. Also the project in which the Symbok is being used needs to have `org.projectlombok:lombok:edge-SNAPSHOT` as dependency:
+
     dependencies {
         compileOnly("net.sympower:symbok:1.18.8-v1-SNAPSHOT")
         annotationProcessor("net.sympower:symbok:1.18.8-v1-SNAPSHOT")
@@ -86,5 +88,9 @@
     }
 
 ## Configuration (lombok.config)
-Default lock field name for `@ReadLock` and `@WriteLock`:
-`symbok.readWriteLock.defaultFieldName=<fieldName>`
+Default lock field name for `@ReadLock` and `@WriteLock` can be overridden:
+
+    symbok.readWriteLock.defaultFieldName=<fieldName>
+
+## IntelliJ IDEA
+`Enable annotation processing` from the settings to properly build and test the project.
