@@ -27,9 +27,9 @@
         return this.value;
       }
       
-      @WriteLock("generatedLock")
-      public void createCustomLock() {
-        System.out.println("New custom lock");
+      @WriteLock("namedLock")
+      public void createNamedLock() {
+        System.out.println("New lock with custom name");
       }
       
       @ReadLock("existingLock")
@@ -43,7 +43,7 @@
     public class LockTest {
       
       private final java.util.concurrent.locks.ReentrantReadWriteLock $readWriteLock = new ReentrantReadWriteLock();
-      private final java.util.concurrent.locks.ReentrantReadWriteLock generatedLock = new ReentrantReadWriteLock();  
+      private final java.util.concurrent.locks.ReentrantReadWriteLock namedLock = new ReentrantReadWriteLock();  
       private final java.util.concurrent.locks.ReentrantReadWriteLock existingLock = new ReentrantReadWriteLock();  
       private int value;
         
@@ -65,12 +65,12 @@
         }
       }
       
-      public void createCustomLock() {
-        this.generatedLock.writeLock().lock();  
+      public void createNamedLock() {
+        this.namedLock.writeLock().lock();  
         try {
-          System.out.println("New custom lock");
+          System.out.println("New lock with custom name");
         } finally {
-          this.generatedLock.writeLock().unlock();
+          this.namedLock.writeLock().unlock();
         }
       }
       
