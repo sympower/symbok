@@ -16,12 +16,12 @@ public class HandleReadWriteLockTest extends SymbokTest {
   }
 
   @Test
-  @DisplayName("Given method is annotated with @WriteLock(\"generatedLock\") " +
-      "and there is no field named \"generatedLock\" in this class " +
-      "then should generate lock field named as \"generatedLock\" " +
+  @DisplayName("Given method is annotated with @WriteLock(\"namedLock\") " +
+      "and there is no field named \"namedLock\" in this class " +
+      "then should generate lock field named as \"namedLock\" " +
       "and use it in given method to generate write lock block")
-  public void generateCustomLock() throws IOException {
-    testClass("readwritelock", "GenerateCustomLock");
+  public void namedLock() throws IOException {
+    testClass("readwritelock", "NamedLock");
   }
 
   @Test
