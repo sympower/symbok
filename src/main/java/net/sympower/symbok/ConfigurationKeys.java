@@ -1,4 +1,4 @@
-package net.sympower.lombok;
+package net.sympower.symbok;
 
 import lombok.core.configuration.ConfigurationKey;
 import lombok.core.configuration.ConfigurationKeysLoader;

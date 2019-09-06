@@ -1,4 +1,4 @@
-package net.sympower.lombok.javac.handler;
+package net.sympower.symbok.javac.handler;
 
 import static lombok.javac.handlers.JavacHandlerUtil.*;
 
@@ -19,9 +19,9 @@ import com.sun.tools.javac.tree.JCTree.JCStatement;
 import com.sun.tools.javac.tree.JCTree.JCVariableDecl;
 import com.sun.tools.javac.util.Context;
 import com.sun.tools.javac.util.List;
-import net.sympower.lombok.ConfigurationKeys;
-import net.sympower.lombok.ReadLock;
-import net.sympower.lombok.WriteLock;
+import net.sympower.symbok.ConfigurationKeys;
+import net.sympower.symbok.ReadLock;
+import net.sympower.symbok.WriteLock;
 import org.kohsuke.MetaInfServices;
 
 public class HandleReadWriteLock {

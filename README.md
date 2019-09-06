@@ -1,6 +1,8 @@
 # Symbok - Lombok extension
 
 ## Gradle
+Please note that currently the project needs to be built against Lombok's `edge-SNAPSHOT` because there is a bug in the latest Lombok version (`1.18.8`) that prevents loading extensions. Also the project in which the Symbok is being used needs to have `org.projectlombok:lombok:edge-SNAPSHOT` as dependency:
+
     dependencies {
         compileOnly("net.sympower:symbok:1.18.8-v1-SNAPSHOT")
         annotationProcessor("net.sympower:symbok:1.18.8-v1-SNAPSHOT")
@@ -27,9 +29,9 @@
         return this.value;
       }
       
-      @WriteLock("generatedLock")
-      public void createCustomLock() {
-        System.out.println("New custom lock");
+      @WriteLock("namedLock")
+      public void createNamedLock() {
+        System.out.println("New lock with custom name");
       }
       
       @ReadLock("existingLock")
@@ -43,7 +45,7 @@
     public class LockTest {
       
       private final java.util.concurrent.locks.ReentrantReadWriteLock $readWriteLock = new ReentrantReadWriteLock();
-      private final java.util.concurrent.locks.ReentrantReadWriteLock generatedLock = new ReentrantReadWriteLock();  
+      private final java.util.concurrent.locks.ReentrantReadWriteLock namedLock = new ReentrantReadWriteLock();  
       private final java.util.concurrent.locks.ReentrantReadWriteLock existingLock = new ReentrantReadWriteLock();  
       private int value;
         
@@ -65,12 +67,12 @@
         }
       }
       
-      public void createCustomLock() {
-        this.generatedLock.writeLock().lock();  
+      public void createNamedLock() {
+        this.namedLock.writeLock().lock();  
         try {
-          System.out.println("New custom lock");
+          System.out.println("New lock with custom name");
         } finally {
-          this.generatedLock.writeLock().unlock();
+          this.namedLock.writeLock().unlock();
         }
       }
       
@@ -86,5 +88,9 @@
     }
 
 ## Configuration (lombok.config)
-Default lock field name for `@ReadLock` and `@WriteLock`:
-`symbok.readWriteLock.defaultFieldName=<fieldName>`
+Default lock field name for `@ReadLock` and `@WriteLock` can be overridden:
+
+    symbok.readWriteLock.defaultFieldName=<fieldName>
+
+## IntelliJ IDEA
+`Enable annotation processing` from the settings to properly build and test the project.
