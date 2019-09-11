@@ -1,14 +1,13 @@
 # Symbok - Lombok extension
 
 ## Gradle
-Please note that currently the project needs to be built against Lombok's `edge-SNAPSHOT` because there is a bug in the latest Lombok version (`1.18.8`) that prevents loading extensions. Also the project in which Symbok is being used needs to have the same `edge-SNAPSHOT` version as dependency:
 
     dependencies {
-        compileOnly("net.sympower:symbok:1.18.8-v1-SNAPSHOT")
-        annotationProcessor("net.sympower:symbok:1.18.8-v1-SNAPSHOT")
+        compileOnly("net.sympower:symbok:1.18.10-v1-SNAPSHOT")
+        annotationProcessor("net.sympower:symbok:1.18.10-v1-SNAPSHOT")
         
-        compileOnly("org.projectlombok:lombok:edge-SNAPSHOT")
-        annotationProcessor("org.projectlombok:lombok:edge-SNAPSHOT")
+        compileOnly("org.projectlombok:lombok:1.18.10")
+        annotationProcessor("org.projectlombok:lombok:1.18.10")
     }
 
 ## Usage

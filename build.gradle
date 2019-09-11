@@ -1,7 +1,6 @@
 buildscript {
   repositories {
     mavenLocal()
-    maven { url 'https://projectlombok.org/edge-releases' }
     mavenCentral()
   }
 }
@@ -11,14 +10,13 @@ plugins {
 }
 
 group 'net.sympower'
-version '1.18.8-v1-SNAPSHOT'
+version '1.18.10-v1-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
 repositories {
   mavenLocal()
   mavenCentral()
-  maven { url 'https://projectlombok.org/edge-releases' }
 }
 
 apply plugin: 'java'
@@ -78,7 +76,7 @@ dependencies {
   compileOnly 'org.kohsuke.metainf-services:metainf-services:1.8'
   compileOnly "org.eclipse.jdt:org.eclipse.jdt.core:3.10.0"
   compileOnly 'javax.inject:javax.inject:1'
-  lombok 'org.projectlombok:lombok:edge-SNAPSHOT'
+  lombok 'org.projectlombok:lombok:1.18.10'
   compile files(unpackedAndRenamedLombokDir)
 
   testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.1'
